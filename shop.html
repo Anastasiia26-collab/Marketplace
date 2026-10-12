@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Магазин — Базар</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== ШАПКА З НАВІГАЦІЄЮ ===== -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">
+                <span class="logo__mark">Б</span>
+                Базар
+            </a>
+            <nav class="nav">
+                <a href="index.html" class="nav__link">Головна</a>
+                <a href="shop.html" class="nav__link nav__link--active">Магазин</a>
+                <a href="create.html" class="nav__link">Оголошення</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <!-- заголовок сторінки -->
+            <div class="page-head">
+                <h1 class="page-head__title">Магазин</h1>
+                <p class="page-head__text">Свіжі оголошення від користувачів Базару.</p>
+            </div>
+
+            <!-- пошук і фільтр -->
+            <div class="toolbar">
+                <input class="input toolbar__search" type="search" placeholder="Пошук товару" aria-label="Пошук товару">
+                <select class="input toolbar__select" aria-label="Категорія">
+                    <option>Усі категорії</option>
+                    <option>Електроніка</option>
+                    <option>Одяг і взуття</option>
+                    <option>Дім і сад</option>
+                    <option>Спорт і відпочинок</option>
+                    <option>Книги та хобі</option>
+                    <option>Дитячі товари</option>
+                </select>
+            </div>
+
+            <!-- сітка карток -->
+            <section class="grid">
+
+                <!-- картка товару -->
+                <article class="card">
+                    <div class="card__img">🎧</div>
+                    <div class="card__body">
+                        <span class="card__tag">Електроніка</span>
+                        <h3 class="card__title">Бездротові навушники</h3>
+                        <p class="card__meta">Київ</p>
+                        <div class="card__footer">
+                            <span class="card__price">1 200 ₴</span>
+                            <a href="#" class="btn btn--primary btn--small">Детальніше</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- картка товару -->
+                <article class="card">
+                    <div class="card__img">🚲</div>
+                    <div class="card__body">
+                        <span class="card__tag">Спорт</span>
+                        <h3 class="card__title">Міський велосипед</h3>
+                        <p class="card__meta">Львів</p>
+                        <div class="card__footer">
+                            <span class="card__price">6 500 ₴</span>
+                            <a href="#" class="btn btn--primary btn--small">Детальніше</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- картка товару -->
+                <article class="card">
+                    <div class="card__img">📚</div>
+                    <div class="card__body">
+                        <span class="card__tag">Книги</span>
+                        <h3 class="card__title">Набір книг про дизайн</h3>
+                        <p class="card__meta">Одеса</p>
+                        <div class="card__footer">
+                            <span class="card__price">450 ₴</span>
+                            <a href="#" class="btn btn--primary btn--small">Детальніше</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- картка товару -->
+                <article class="card">
+                    <div class="card__img">🛋️</div>
+                    <div class="card__body">
+                        <span class="card__tag">Дім</span>
+                        <h3 class="card__title">Крісло-мішок</h3>
+                        <p class="card__meta">Харків</p>
+                        <div class="card__footer">
+                            <span class="card__price">900 ₴</span>
+                            <a href="#" class="btn btn--primary btn--small">Детальніше</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- картка товару -->
+                <article class="card">
+                    <div class="card__img">👟</div>
+                    <div class="card__body">
+                        <span class="card__tag">Одяг і взуття</span>
+                        <h3 class="card__title">Кросівки, 42 розмір</h3>
+                        <p class="card__meta">Дніпро</p>
+                        <div class="card__footer">
+                            <span class="card__price">1 700 ₴</span>
+                            <a href="#" class="btn btn--primary btn--small">Детальніше</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- картка товару -->
+                <article class="card">
+                    <div class="card__img">📷</div>
+                    <div class="card__body">
+                        <span class="card__tag">Електроніка</span>
+                        <h3 class="card__title">Фотоапарат із об’єктивом</h3>
+                        <p class="card__meta">Київ</p>
+                        <div class="card__footer">
+                            <span class="card__price">8 900 ₴</span>
+                            <a href="#" class="btn btn--primary btn--small">Детальніше</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- картка товару -->
+                <article class="card">
+                    <div class="card__img">🧸</div>
+                    <div class="card__body">
+                        <span class="card__tag">Дитячі товари</span>
+                        <h3 class="card__title">Конструктор, 600 деталей</h3>
+                        <p class="card__meta">Вінниця</p>
+                        <div class="card__footer">
+                            <span class="card__price">750 ₴</span>
+                            <a href="#" class="btn btn--primary btn--small">Детальніше</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- картка товару -->
+                <article class="card">
+                    <div class="card__img">🎸</div>
+                    <div class="card__body">
+                        <span class="card__tag">Хобі</span>
+                        <h3 class="card__title">Акустична гітара</h3>
+                        <p class="card__meta">Полтава</p>
+                        <div class="card__footer">
+                            <span class="card__price">3 200 ₴</span>
+                            <a href="#" class="btn btn--primary btn--small">Детальніше</a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ===== ФУТЕР ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <a href="index.html" class="logo"><span class="logo__mark">Б</span>Базар</a>
+            <nav class="footer__nav">
+                <a href="index.html" class="footer__link">Головна</a>
+                <a href="shop.html" class="footer__link">Магазин</a>
+                <a href="create.html" class="footer__link">Оголошення</a>
+            </nav>
+            <p class="footer__copy">© 2026 Базар. Навчальний проєкт.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

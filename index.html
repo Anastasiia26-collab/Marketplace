@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Базар — маркетплейс оголошень</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== ШАПКА З НАВІГАЦІЄЮ ===== -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">
+                <span class="logo__mark">Б</span>
+                Базар
+            </a>
+            <nav class="nav">
+                <a href="index.html" class="nav__link nav__link--active">Головна</a>
+                <a href="shop.html" class="nav__link">Магазин</a>
+                <a href="create.html" class="nav__link">Оголошення</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== ГЕРОЙ: опис сайту ===== -->
+        <section class="hero">
+            <div class="container hero__inner">
+                <div class="hero__content">
+                    <h1 class="hero__title">Купуйте й продавайте речі поруч із вами</h1>
+                    <p class="hero__text">
+                        Базар — це майданчик, де кожен може виставити на продаж власний товар
+                        або знайти потрібну річ за чесною ціною. Без складної реєстрації та прихованих комісій.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="shop.html" class="btn btn--primary">Дивитись товари</a>
+                        <a href="create.html" class="btn btn--ghost">Створити оголошення</a>
+                    </div>
+                </div>
+
+                <!-- декоративна стопка карток -->
+                <div class="hero__stack" aria-hidden="true">
+                    <div class="mini-card">
+                        <div class="mini-card__icon">🎧</div>
+                        <div>
+                            <p class="mini-card__title">Навушники</p>
+                            <p class="mini-card__price">1 200 ₴</p>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mini-card__icon">🚲</div>
+                        <div>
+                            <p class="mini-card__title">Міський велосипед</p>
+                            <p class="mini-card__price">6 500 ₴</p>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mini-card__icon">📚</div>
+                        <div>
+                            <p class="mini-card__title">Набір книг</p>
+                            <p class="mini-card__price">450 ₴</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ЯК ЦЕ ПРАЦЮЄ ===== -->
+        <section class="section section--white">
+            <div class="container">
+                <h2 class="section__title">Як це працює</h2>
+                <p class="section__lead">Від ідеї до першої угоди — три простих кроки.</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step__num">1</div>
+                        <h3 class="step__title">Створіть оголошення</h3>
+                        <p class="step__text">Додайте фото, опис і ціну в простій формі — це займає кілька хвилин.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step__num">2</div>
+                        <h3 class="step__title">Покупці знайдуть вас</h3>
+                        <p class="step__text">Ваш товар з’явиться у магазині поруч з іншими пропозиціями.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step__num">3</div>
+                        <h3 class="step__title">Домовтесь про угоду</h3>
+                        <p class="step__text">Покупець напише або зателефонує, і ви обираєте зручний спосіб передачі.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ЩО МОЖНА ЗНАЙТИ ===== -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section__title">Що можна знайти на Базарі</h2>
+                <p class="section__lead">Від техніки до одягу — оберіть категорію, яка вам до душі.</p>
+
+                <div class="categories">
+                    <div class="category">
+                        <div class="category__icon">💻</div>
+                        <p class="category__name">Електроніка</p>
+                    </div>
+                    <div class="category">
+                        <div class="category__icon">👕</div>
+                        <p class="category__name">Одяг і взуття</p>
+                    </div>
+                    <div class="category">
+                        <div class="category__icon">🛋️</div>
+                        <p class="category__name">Дім і сад</p>
+                    </div>
+                    <div class="category">
+                        <div class="category__icon">🚲</div>
+                        <p class="category__name">Спорт і відпочинок</p>
+                    </div>
+                    <div class="category">
+                        <div class="category__icon">📚</div>
+                        <p class="category__name">Книги та хобі</p>
+                    </div>
+                    <div class="category">
+                        <div class="category__icon">🧸</div>
+                        <p class="category__name">Дитячі товари</p>
+                    </div>
+                    <div class="category">
+                        <div class="category__icon">🚗</div>
+                        <p class="category__name">Авто</p>
+                    </div>
+                    <div class="category">
+                        <div class="category__icon">🎁</div>
+                        <p class="category__name">Інше</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ЗАКЛИК ДО ДІЇ ===== -->
+        <section class="section">
+            <div class="container">
+                <div class="cta">
+                    <h2 class="cta__title">Є річ, якою ви вже не користуєтесь?</h2>
+                    <p class="cta__text">Дайте їй друге життя — розмістіть оголошення безкоштовно.</p>
+                    <a href="create.html" class="btn btn--primary">Створити оголошення</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== ФУТЕР ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <a href="index.html" class="logo"><span class="logo__mark">Б</span>Базар</a>
+            <nav class="footer__nav">
+                <a href="index.html" class="footer__link">Головна</a>
+                <a href="shop.html" class="footer__link">Магазин</a>
+                <a href="create.html" class="footer__link">Оголошення</a>
+            </nav>
+            <p class="footer__copy">© 2026 Базар. Навчальний проєкт.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

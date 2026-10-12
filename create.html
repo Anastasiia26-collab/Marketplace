@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Створити оголошення — Базар</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== ШАПКА З НАВІГАЦІЄЮ ===== -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">
+                <span class="logo__mark">Б</span>
+                Базар
+            </a>
+            <nav class="nav">
+                <a href="index.html" class="nav__link">Головна</a>
+                <a href="shop.html" class="nav__link">Магазин</a>
+                <a href="create.html" class="nav__link nav__link--active">Оголошення</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <div class="page-head">
+                <h1 class="page-head__title">Нове оголошення</h1>
+                <p class="page-head__text">Заповніть форму — і товар з’явиться в магазині.</p>
+            </div>
+
+            <div class="create">
+
+                <!-- ===== ФОРМА ===== -->
+                <form class="form" id="adForm">
+                    <p class="notice" id="notice">Оголошення збережено. Дякуємо!</p>
+
+                    <div class="field">
+                        <label class="field__label" for="title">Назва товару</label>
+                        <input class="input" type="text" id="title" name="title"
+                            placeholder="Наприклад: Бездротові навушники" required>
+                    </div>
+
+                    <div class="form__row">
+                        <div class="field">
+                            <label class="field__label" for="category">Категорія</label>
+                            <select class="input" id="category" name="category" required>
+                                <option value="">Оберіть категорію</option>
+                                <option>Електроніка</option>
+                                <option>Одяг і взуття</option>
+                                <option>Дім і сад</option>
+                                <option>Спорт і відпочинок</option>
+                                <option>Книги та хобі</option>
+                                <option>Дитячі товари</option>
+                                <option>Авто</option>
+                                <option>Інше</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label class="field__label" for="price">Ціна, ₴</label>
+                            <input class="input" type="number" id="price" name="price" min="0" placeholder="1000"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <span class="field__label">Стан товару</span>
+                        <div class="choices">
+                            <label class="choice">
+                                <input class="choice__input" type="radio" name="condition" value="new" checked>
+                                <span class="choice__box">Новий</span>
+                            </label>
+                            <label class="choice">
+                                <input class="choice__input" type="radio" name="condition" value="used">
+                                <span class="choice__box">Вживаний</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="field__label" for="description">Опис</label>
+                        <textarea class="input" id="description" name="description"
+                            placeholder="Розкажіть про стан, комплектацію, причину продажу" required></textarea>
+                    </div>
+
+                    <div class="field">
+                        <span class="field__label">Фото</span>
+                        <div class="upload">
+                            Додайте до 5 фотографій товару
+                            <input type="file" name="photos" accept="image/*" multiple>
+                        </div>
+                    </div>
+
+                    <div class="form__row">
+                        <div class="field">
+                            <label class="field__label" for="city">Місто</label>
+                            <input class="input" type="text" id="city" name="city" placeholder="Київ" required>
+                        </div>
+                        <div class="field">
+                            <label class="field__label" for="phone">Телефон</label>
+                            <input class="input" type="tel" id="phone" name="phone" placeholder="+380 00 000 00 00"
+                                required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary">Опублікувати оголошення</button>
+                </form>
+
+                <!-- ===== БІЧНА ПАНЕЛЬ З ПОРАДАМИ ===== -->
+                <aside class="aside">
+                    <h2 class="aside__title">Як продати швидше</h2>
+                    <p class="aside__item">Робіть чіткі фото при денному світлі.</p>
+                    <p class="aside__item">Вказуйте реальний стан і дефекти, якщо вони є.</p>
+                    <p class="aside__item">Порівняйте ціну з подібними оголошеннями в магазині.</p>
+                    <p class="aside__item">Відповідайте покупцям протягом дня.</p>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== ФУТЕР ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <a href="index.html" class="logo"><span class="logo__mark">Б</span>Базар</a>
+            <nav class="footer__nav">
+                <a href="index.html" class="footer__link">Головна</a>
+                <a href="shop.html" class="footer__link">Магазин</a>
+                <a href="create.html" class="footer__link">Оголошення</a>
+            </nav>
+            <p class="footer__copy">© 2026 Базар. Навчальний проєкт.</p>
+        </div>
+    </footer>
+
+    <!-- проста демонстрація: показуємо повідомлення замість реальної відправки на сервер -->
+    <script>
+        document.getElementById("adForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            document.getElementById("notice").classList.add("notice--visible");
+            this.reset();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+</body>
+
+</html>

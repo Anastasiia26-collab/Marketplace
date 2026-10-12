@@ -1,0 +1,750 @@
+/* ==========================================================
+   МАРКЕТПЛЕЙС — спільні стилі для всіх сторінок
+   Шрифт: Onest (підтримує кирилицю), підключається в <head>
+   ========================================================== */
+
+/* ---------- 1. Змінні (кольори, радіуси, тіні) ---------- */
+:root {
+  --navy: #0b2a5b;      /* темно-синій: заголовки, футер */
+  --blue: #1e6fff;      /* основний акцент: кнопки, посилання */
+  --blue-dark: #1556d1; /* акцент при наведенні */
+  --sky: #e3eeff;       /* світло-блакитний: фони плашок */
+  --ice: #f4f8ff;       /* фон сторінки */
+  --cyan: #19c3e6;      /* додатковий акцент: лінія активної вкладки */
+  --ink: #14233f;       /* основний текст */
+  --muted: #5f6f8c;     /* другорядний текст */
+  --line: #d6e2f5;      /* рамки */
+  --white: #ffffff;
+
+  --radius-s: 8px;
+  --radius-m: 14px;
+  --radius-l: 24px;
+  --shadow: 0 10px 30px rgba(11, 42, 91, 0.10);
+  --wrap: 1120px;       /* максимальна ширина контенту */
+}
+
+/* ---------- 2. Скидання та базові стилі ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Onest", "Segoe UI", Arial, sans-serif;
+  background: var(--ice);
+  color: var(--ink);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* щоб футер завжди був унизу */
+}
+
+/* головний вміст займає весь вільний простір між шапкою і футером */
+main {
+  flex: 1;
+}
+
+/* усі зображення адаптивні */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* видимий фокус для клавіатури */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+/* ---------- 3. Загальний контейнер ---------- */
+.container {
+  width: 100%;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- 4. Шапка (header + nav) ---------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 72px;
+}
+
+/* логотип */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+}
+
+.logo__mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  color: var(--white);
+  font-size: 18px;
+}
+
+/* навігаційне меню */
+.nav {
+  display: flex;
+  gap: 8px;
+}
+
+.nav__link {
+  position: relative;
+  padding: 10px 18px;
+  font-weight: 600;
+  color: var(--muted);
+  border-radius: var(--radius-s);
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav__link:hover {
+  color: var(--blue);
+  background: var(--sky);
+}
+
+/* активна вкладка: синій текст + лінія знизу (аналог зеленої лінії з макета) */
+.nav__link--active {
+  color: var(--blue);
+}
+
+.nav__link--active::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 2px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--cyan);
+}
+
+/* ---------- 5. Кнопки ---------- */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 2px solid transparent;
+  border-radius: var(--radius-m);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--primary {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.btn--primary:hover {
+  background: var(--blue-dark);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.btn--ghost:hover {
+  background: var(--sky);
+}
+
+.btn--small {
+  padding: 10px 18px;
+  font-size: 14px;
+  border-radius: var(--radius-s);
+}
+
+/* ---------- 6. Заголовки секцій ---------- */
+.section {
+  padding: 72px 0;
+}
+
+.section--white {
+  background: var(--white);
+}
+
+.section__title {
+  font-size: clamp(26px, 3.4vw, 36px);
+  line-height: 1.2;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.section__lead {
+  max-width: 60ch;
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+
+/* ==========================================================
+   СТОРІНКА 1 — ГОЛОВНА (index.html)
+   ========================================================== */
+
+/* ---------- 7. Герой-блок ---------- */
+.hero {
+  padding: 80px 0 72px;
+  background:
+    radial-gradient(900px 400px at 85% 0%, rgba(25, 195, 230, 0.22), transparent 60%),
+    linear-gradient(180deg, var(--sky), var(--ice));
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero__title {
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+.hero__text {
+  max-width: 52ch;
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* права частина героя: стопка «живих» оголошень */
+.hero__stack {
+  position: relative;
+  height: 340px;
+}
+
+.mini-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 290px;
+  padding: 14px 18px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow);
+}
+
+.mini-card:nth-child(1) { top: 0;     left: 0; }
+.mini-card:nth-child(2) { top: 110px; left: 70px; }
+.mini-card:nth-child(3) { top: 220px; left: 20px; }
+
+.mini-card__icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-s);
+  background: var(--sky);
+  font-size: 28px;
+}
+
+.mini-card__title {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.mini-card__price {
+  font-weight: 800;
+  color: var(--blue);
+}
+
+/* ---------- 8. Як це працює (кроки — тут нумерація доречна) ---------- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.step {
+  padding: 28px;
+  background: var(--ice);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+}
+
+.step__num {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--white);
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.step__title {
+  font-size: 20px;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.step__text {
+  color: var(--muted);
+}
+
+/* ---------- 9. Що можна продати (категорії) ---------- */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.category {
+  padding: 24px 20px;
+  text-align: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.category:hover {
+  border-color: var(--blue);
+  box-shadow: var(--shadow);
+}
+
+.category__icon {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.category__name {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* ---------- 10. Заклик до дії внизу сторінки ---------- */
+.cta {
+  padding: 56px 40px;
+  text-align: center;
+  color: var(--white);
+  border-radius: var(--radius-l);
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+}
+
+.cta__title {
+  font-size: clamp(24px, 3vw, 32px);
+  margin-bottom: 10px;
+}
+
+.cta__text {
+  max-width: 50ch;
+  margin: 0 auto 26px;
+  opacity: 0.9;
+}
+
+.cta .btn--primary {
+  background: var(--white);
+  color: var(--blue);
+}
+
+.cta .btn--primary:hover {
+  background: var(--sky);
+}
+
+/* ==========================================================
+   СТОРІНКА 2 — МАГАЗИН (shop.html)
+   ========================================================== */
+
+/* ---------- 11. Заголовок сторінки ---------- */
+.page-head {
+  padding: 48px 0 24px;
+}
+
+.page-head__title {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+}
+
+.page-head__text {
+  color: var(--muted);
+}
+
+/* ---------- 12. Панель пошуку та фільтрів ---------- */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.toolbar__search {
+  flex: 1 1 260px;
+}
+
+.toolbar__select {
+  flex: 0 0 200px;
+}
+
+/* ---------- 13. Сітка карток товарів ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding-bottom: 72px;
+}
+
+/* картка товару (div.card на макеті — «картка товару») */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  border-color: var(--blue);
+  box-shadow: var(--shadow);
+}
+
+/* блок із зображенням (квадрат на макеті) */
+.card__img {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, var(--sky), #cfe0ff);
+  font-size: 64px;
+}
+
+/* якщо замість емодзі вставите <img src="..."> — він заповнить блок */
+.card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px;
+}
+
+.card__tag {
+  align-self: flex-start;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--sky);
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.card__title {
+  font-size: 17px;
+  line-height: 1.3;
+  color: var(--navy);
+}
+
+.card__meta {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.card__price {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+/* ==========================================================
+   СТОРІНКА 3 — СТВОРЕННЯ ОГОЛОШЕННЯ (create.html)
+   ========================================================== */
+
+/* ---------- 14. Розкладка: форма + бічна підказка ---------- */
+.create {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+  align-items: start;
+  padding-bottom: 72px;
+}
+
+/* ---------- 15. Форма ---------- */
+.form {
+  padding: 36px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow);
+}
+
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.field__label {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--navy);
+}
+
+/* спільний вигляд для input, select, textarea */
+.input {
+  width: 100%;
+  padding: 13px 16px;
+  font: inherit;
+  color: var(--ink);
+  background: var(--ice);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-s);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--blue);
+  background: var(--white);
+}
+
+textarea.input {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* вибір стану товару (radio) */
+.choices {
+  display: flex;
+  gap: 12px;
+}
+
+.choice {
+  flex: 1;
+  position: relative;
+}
+
+.choice__input {
+  position: absolute;
+  opacity: 0;
+}
+
+.choice__box {
+  display: block;
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+  background: var(--ice);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-s);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.choice__input:checked + .choice__box {
+  color: var(--white);
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.choice__input:focus-visible + .choice__box {
+  outline: 3px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+/* завантаження фото */
+.upload {
+  padding: 28px;
+  text-align: center;
+  color: var(--muted);
+  background: var(--ice);
+  border: 2px dashed var(--line);
+  border-radius: var(--radius-m);
+}
+
+.upload input {
+  margin-top: 10px;
+}
+
+/* повідомлення про успіх (показується після відправки) */
+.notice {
+  display: none;
+  margin-bottom: 20px;
+  padding: 14px 18px;
+  color: #0a5a2e;
+  background: #dff7e9;
+  border-radius: var(--radius-s);
+  font-weight: 600;
+}
+
+.notice--visible {
+  display: block;
+}
+
+.form .btn {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* ---------- 16. Бічна панель з порадами ---------- */
+.aside {
+  padding: 28px;
+  color: var(--white);
+  border-radius: var(--radius-l);
+  background: linear-gradient(160deg, var(--navy), var(--blue));
+}
+
+.aside__title {
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+
+.aside__item {
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 15px;
+}
+
+/* ==========================================================
+   ФУТЕР (однаковий на всіх сторінках)
+   ========================================================== */
+.footer {
+  margin-top: auto;
+  padding: 40px 0 28px;
+  color: #c9d8f5;
+  background: var(--navy);
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer .logo {
+  color: var(--white);
+}
+
+.footer__nav {
+  display: flex;
+  gap: 24px;
+}
+
+.footer__link:hover {
+  color: var(--white);
+}
+
+.footer__copy {
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 14px;
+}
+
+/* ==========================================================
+   АДАПТИВ
+   ========================================================== */
+@media (max-width: 960px) {
+  .grid        { grid-template-columns: repeat(2, 1fr); }
+  .categories  { grid-template-columns: repeat(2, 1fr); }
+  .hero__inner { grid-template-columns: 1fr; }
+  .hero__stack { display: none; }
+  .create      { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .header__inner { flex-direction: column; padding: 12px 0; gap: 6px; }
+  .nav__link     { padding: 8px 12px; }
+  .nav__link--active::after { left: 12px; right: 12px; }
+  .steps         { grid-template-columns: 1fr; }
+  .grid          { grid-template-columns: 1fr; }
+  .form          { padding: 22px; }
+  .form__row     { grid-template-columns: 1fr; gap: 0; }
+  .choices       { flex-direction: column; }
+  .toolbar__select { flex: 1 1 100%; }
+  .footer__inner { flex-direction: column; text-align: center; }
+}
+
+/* повага до налаштувань користувача щодо анімацій */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
